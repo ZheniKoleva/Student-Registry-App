@@ -1,16 +1,17 @@
 name: CD Workflow
 
-on:  
+on:
   workflow_run:
     workflows: ["CI Workflow"]
     branches:
-        - main
+      - main
     types:
       - completed
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest     
+    runs-on: ubuntu-latest
+
     steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
