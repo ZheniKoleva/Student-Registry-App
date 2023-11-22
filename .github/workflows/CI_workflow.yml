@@ -4,22 +4,21 @@ on:
   push:
     branches: []
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest    
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
-    - name: Use Node.js 18.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: 'npm'
-    - name: Install node modules    
-      run: npm install    
-    - name: Run the tests  
-      run: npm test
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: "npm"
+      - name: Install node modules
+        run: npm install
+      - name: Run the tests
+        run: npm test
