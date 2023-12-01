@@ -29,7 +29,7 @@ pipeline {
             steps {
                  withCredentials([usernamePassword(credentialsId: '03f19296-bd09-456c-af79-b1c0002bb4d9', passwordVariable: 'token', usernameVariable: 'user')]) {
                     bat """docker pull %user%/%app_name%:2.0.0
-                        docker-compose -f docker-compose.yml up -d"""
+                        docker run -p 3030:3030 -d --name sr-container %user%/%app_name%:2.0.0"""
                 }                
             }
         }
