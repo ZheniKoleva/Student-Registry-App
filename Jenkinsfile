@@ -7,13 +7,7 @@ pipeline {
             steps {
                 bat "npm install"
             }
-        }
-
-        stage('Run the app') {
-            steps {
-                bat "npm run start &"
-            }
-        }
+        }       
         
         stage('Run tests') {
             steps {
