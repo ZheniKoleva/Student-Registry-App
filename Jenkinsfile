@@ -1,12 +1,7 @@
 pipeline {
     agent any
     
-    stages {
-        stage("Repo checkout") {
-            steps {
-                checkout scm
-            }
-        }
+    stages {       
 
         stage('Install Node dependencies') {
             steps {
@@ -16,7 +11,7 @@ pipeline {
 
         stage('Run the app') {
             steps {
-                bat "npm run starts &"
+                bat "npm run start &"
             }
         }
         
